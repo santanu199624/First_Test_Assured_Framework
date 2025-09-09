@@ -38,5 +38,28 @@ public class Usre_endpoints {
 		return response;
 		
 	}
+	
+	public static Response updateUser(String username, User_pojo payload) {
+		Response response = RestAssured
+		.given()
+			.contentType(ContentType.JSON)
+			.accept(ContentType.JSON)
+			.pathParam("username", username)
+			.body(payload)
+		.when()
+			.put(Routes.update_url);
+		
+		return response;
+	}
+	
+	public static Response deleteUser(String username) {
+		Response response = RestAssured
+		.given()
+			.pathParam("username", username)
+		.when()
+			.delete(Routes.delete_url);
+		
+		return response;
+	}
 
 }

@@ -7,6 +7,7 @@
         <methods>
           <include name="testGetUserByName"/>
           <include name="setUpData"/>
+          <include name="testDeleteUserByName"/>
         </methods>
       </class> <!-- api.test.User_Test -->
     </classes>
